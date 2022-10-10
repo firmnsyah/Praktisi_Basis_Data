@@ -1,8 +1,12 @@
--- Memberikan semua hak akses ke user
-GRANT ALL PRIVILEGES ON Kelompok_VB.* TO 'Kel_Vb'@'localhost';
+-- Memberikan semua hak akses ke user 
+GRANT CREATE, DROP, SELECT, INSERT, DELETE, UPDATE, ALTER  
+ON Kelompok_VB.*
+TO 'Kel_Vb'@'localhost';
 
--- Memberikan hak akses tertentu (INSERT) ke user
-GRANT INSERT ON Kelompok_VB.* TO 'Kel_Vb'@'localhost';
+-- Status hak akses user
+SHOW GRANTS FOR 'Kel_Vb'@'localhost';
 
--- Mencabut semua hak akses dari user
-REVOKE ALL ON Kelompok_VB.* FROM 'Kel_Vb'@'localhost';
+-- Menarik hak akses CREATE & DROP dari user
+REVOKE CREATE, DROP
+ON Kelompok_VB.*
+FROM 'Kel_Vb'@'localhost';
